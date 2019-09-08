@@ -37,8 +37,6 @@ def TSP(visited, position):
     for CityIndex in range (0, cities):
         if visited&(1<<CityIndex) == 0:
             new_path = distances[position][CityIndex] + TSP(visited|(1<<CityIndex), CityIndex)
-            if new_path == 0:
-                new_path = math.inf
             length = min(new_path, length)
     path[visited][position] = length
     return length
