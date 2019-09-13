@@ -12,10 +12,8 @@ You should output one line containing the minimum total length of the cycle or t
 #include <iostream>
 #include <vector>
 #include <cstdint>
-#include <algorithm>
 #include <utility>
 
-using Matrix = std::vector<std::vector<int32_t>>;
 using Node = std::vector<std::pair<int32_t, int>>;
 using Graph = std::vector<Node>;
 int32_t bound = 2'147'483'647;
@@ -27,24 +25,20 @@ void FillGraph(Graph& graph, int vertices) {
         for (int j = 0; j < vertices; j++) {
             int32_t tmp;
             std::cin >> tmp;
-            if (tmp != 0) {
+            if (tmp != 0)
                 graph[i].push_back({tmp, j});
-            }
         }
     }
 }
 
-int32_t TSP(int position, int TotalPath, std::vector<bool>& visited, int cities) {
+int32_t TSP(int position, int32_t TotalPath, std::vector<bool>& visited, int cities) {
     if (TotalPath > bound)
         return bound;
-
     if (0 == position && cities != 0) {
-        visited[position] = false;
         if (cities < vertices - 1)
             return bound;
         else return TotalPath;
     }
-
     if (0 != position) {
         visited[position] = true;
         ++cities;
@@ -55,13 +49,11 @@ int32_t TSP(int position, int TotalPath, std::vector<bool>& visited, int cities)
             int32_t temp = TSP (graph[position][i].second,
                                 TotalPath + graph[position][i].first,
                                 visited, cities);
-            if (temp < bound) {
+            if (temp < bound)
                 bound = temp;
-            }
         }
     }
     visited[position] = false;
-
     return bound;
 }
 
