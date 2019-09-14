@@ -37,8 +37,10 @@ int32_t TSP(int position, int32_t TotalPath, std::vector<bool>& visited, int cit
     if (0 == position && cities != 0) {
         if (cities < vertices - 1)
             return bound;
-        else return TotalPath;
-    }
+        else if (TotalPath < bound)
+            return bound = TotalPath;
+        else
+            return bound;
     if (0 != position) {
         visited[position] = true;
         ++cities;
@@ -49,8 +51,6 @@ int32_t TSP(int position, int32_t TotalPath, std::vector<bool>& visited, int cit
             int32_t temp = TSP (graph[position][i].second,
                                 TotalPath + graph[position][i].first,
                                 visited, cities);
-            if (temp < bound)
-                bound = temp;
         }
     }
     visited[position] = false;
