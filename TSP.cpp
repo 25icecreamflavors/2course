@@ -48,9 +48,9 @@ int32_t TSP(int position, int32_t TotalPath, std::vector<bool>& visited, int cit
 
     for (int i = 0; i < graph[position].size(); i++) {
         if (visited[ graph[position][i].second ] == false) {
-            int32_t temp = TSP (graph[position][i].second,
-                                TotalPath + graph[position][i].first,
-                                visited, cities);
+            TSP (graph[position][i].second,
+                 TotalPath + graph[position][i].first,
+                 visited, cities);
         }
     }
     visited[position] = false;
