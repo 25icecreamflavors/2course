@@ -41,6 +41,7 @@ int32_t TSP(int position, int32_t TotalPath, std::vector<bool>& visited, int cit
             return bound = TotalPath;
         else
             return bound;
+    }
     if (0 != position) {
         visited[position] = true;
         ++cities;
