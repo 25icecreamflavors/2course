@@ -1,4 +1,4 @@
-\\ Given N points on the plane. You should to minimize the circular route through all points.
+// Given N points on the plane. You should to minimize the circular route through all points.
 
 #include <iostream>
 #include <vector>
