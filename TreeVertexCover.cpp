@@ -1,4 +1,4 @@
-\* Find minimum vertex cover for forest graph. *\
+/* Find minimum vertex cover for forest graph. */
 
 #include <iostream>
 #include <vector>
