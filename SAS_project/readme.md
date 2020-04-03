@@ -14,3 +14,5 @@ There are several main goals in project, including:
 3. Choosing the best personalized offer for the each profile (Next Best Offer).
 
 4. Building a joint purchase model based on transactional data for customers (Market Basket Analysis).
+
+#### I uploaded my Jupyter notebooks for this project to this repository.
